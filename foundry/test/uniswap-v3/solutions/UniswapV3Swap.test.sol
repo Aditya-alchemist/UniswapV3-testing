@@ -30,7 +30,6 @@ contract UniswapV3SwapTest is Test {
     function test_exactInputSingle() public {
         uint256 wethBefore = weth.balanceOf(address(this));
 
-       
         uint256 amountOut = router.exactInputSingle(
             ISwapRouter.ExactInputSingleParams({
                 tokenIn: DAI,
@@ -57,7 +56,6 @@ contract UniswapV3SwapTest is Test {
     // - Send WBTC from Uniswap V3 to this contract
     // NOTE: WBTC has 8 decimals
     function test_exactInput() public {
-        
         bytes memory path =
             abi.encodePacked(DAI, uint24(3000), WETH, uint24(3000), WBTC);
 
@@ -81,7 +79,6 @@ contract UniswapV3SwapTest is Test {
     function test_exactOutputSingle() public {
         uint256 wethBefore = weth.balanceOf(address(this));
 
-      
         uint256 amountIn = router.exactOutputSingle(
             ISwapRouter.ExactOutputSingleParams({
                 tokenIn: DAI,
@@ -107,21 +104,21 @@ contract UniswapV3SwapTest is Test {
     // - Swap WETH to WBTC on pool with 0.3% fee
     // - Send WBTC from Uniswap V3 to this contract
     // NOTE: WBTC has 8 decimals
-   function test_exactOutput() public {
-    bytes memory path =
-        abi.encodePacked(WBTC, uint24(3000), WETH, uint24(3000), DAI);
+    function test_exactOutput() public {
+        bytes memory path =
+            abi.encodePacked(WBTC, uint24(3000), WETH, uint24(3000), DAI);
 
-    uint256 amountIn = router.exactOutput(
-        ISwapRouter.ExactOutputParams({
-            path: path,
-            recipient: address(this),
-            amountOut: 0.001 * 1e8,    // lower output target
-            amountInMaximum: 1000 * 1e18
-        })
-    );
+        uint256 amountIn = router.exactOutput(
+            ISwapRouter.ExactOutputParams({
+                path: path,
+                recipient: address(this),
+                amountOut: 0.001 * 1e8, // lower output target
+                amountInMaximum: 1000 * 1e18
+            })
+        );
 
-    console2.log("DAI amount in %e", amountIn);
-    assertLe(amountIn, 1000 * 1e18);
-    assertEq(wbtc.balanceOf(address(this)), 0.001 * 1e8);
-}
+        console2.log("DAI amount in %e", amountIn);
+        assertLe(amountIn, 1000 * 1e18);
+        assertEq(wbtc.balanceOf(address(this)), 0.001 * 1e8);
+    }
 }
