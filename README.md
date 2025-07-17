@@ -14,7 +14,12 @@ This project contains advanced Uniswap V3 swap tests using the [Foundry](https:/
 
 ## Outputs
 
+### Swapping
 <img width="1127" height="537" alt="image" src="https://github.com/user-attachments/assets/be262405-7037-45c0-ac20-1afd537fed65" />
+
+### Factory
+<img width="1232" height="494" alt="Screenshot 2025-07-17 145144" src="https://github.com/user-attachments/assets/aad5d30c-ab6a-43e5-be0e-cac3e41e8793" />
+
 
 
 ## Prerequisites
