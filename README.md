@@ -20,6 +20,10 @@ This project contains advanced Uniswap V3 swap tests using the [Foundry](https:/
 ### Factory
 <img width="1232" height="494" alt="Screenshot 2025-07-17 145144" src="https://github.com/user-attachments/assets/aad5d30c-ab6a-43e5-be0e-cac3e41e8793" />
 
+### Liquidity
+<img width="1233" height="619" alt="image" src="https://github.com/user-attachments/assets/3a2fb171-997c-4c99-8e49-d860be88cfc6" />
+
+
 
 
 ## Prerequisites
